@@ -1,7 +1,14 @@
-.list {
+.columnList {
   gap: 12px;
   display: flex;
   flex-direction: column;
+}
+.rowList {
+  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .banner {

@@ -1,3 +1,5 @@
+import { useTheme } from "../../context/ThemeContext";
+import { PaginationProps } from "../../interfaces";
 import styles from "./styles.module.css";
 
 const Pagination = ({
@@ -6,9 +8,12 @@ const Pagination = ({
   currentPage,
   handlePreviousPage,
   handleNextPage,
-}) => {
+}: PaginationProps) => {
+  const { isDark } = useTheme();
   return (
-    <div className={styles.pagination}>
+    <div
+      className={`${styles.pagination} ${isDark ? styles.dark : styles.light}`}
+    >
       <button
         disabled={currentPage <= 1}
         onClick={handlePreviousPage}
